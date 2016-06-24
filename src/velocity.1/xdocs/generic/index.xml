@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2003-2004 The Apache Software Foundation.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  $Id: index.xml,v 1.7 2004/02/18 20:23:01 nbubna Exp $
+-->
+<document>
+
+    <properties>
+        <title>GenericTools</title>
+        <author email="sidler@apache.org">Gabriel Sidler</author>
+        <projectfile>xdocs/generic/menu.xml</projectfile>
+    </properties>
+
+    <body> 
+
+    <section name="Overview">
+        <p>
+          GenericTools contains a collection of reusable and well 
+          documented tools and utility classes of general interest
+          to Velocity users.  These classes and tools have no dependency
+          on the VelocityView or VelocityStruts sub-projects. The tools may 
+          be used as you would any other POJO ("plain old java object").
+        </p>
+        <p>
+          <strong>Tools:</strong>
+          <dl>
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/DateTool.html"><strong>DateTool</strong></a></dt>
+            <dd>A tool for manipulating and formatting dates.</dd>
+
+            <dt><a href="MathTool.html"><strong>MathTool</strong></a></dt>
+            <dd>A tool for performing floating point math.</dd>
+
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/NumberTool.html"><strong>NumberTool</strong></a></dt>
+            <dd>A tool for formatting numbers.</dd>
+
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/IteratorTool.html"><strong>IteratorTool</strong></a></dt>
+            <dd>A convenience tool to use with #foreach loops. It wraps a list
+            to let the designer specify a condition to terminate the loop, 
+            and reuse the same list in different loops.</dd>
+
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/RenderTool.html"><strong>RenderTool</strong></a></dt>
+            <dd>A tool to evaluate and render arbitrary strings of VTL (Velocity
+            Template Language).</dd>
+          </dl>
+          <br clear="all"/>
+          <strong>Utilities:</strong>
+          <dl>
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/log/CommonsLogLogSystem.html"><strong>CommonsLogLogSystem</strong></a></dt>
+            <dd>An implementation of Velocity's LogSystem interface that redirects
+            log output to a Commons-Logging Log instance.</dd>
+
+            <dt><a href="../javadoc/org/apache/velocity/tools/generic/log/LogSystemCommonsLog.html"><strong>LogSystemCommonsLog</strong></a></dt>
+            <dd>An implementation of Commons-Logging's Log interface that redirects
+            log output to Velocity's LogSystem.</dd>
+          </dl>
+        </p>
+        <br clear="all" />
+    </section>
+
+    <section name="Contributions">
+        <p>We welcome your contributions to this library.  Patches can be sent to the 
+        mailing list or attached to a
+        <a href="http://issues.apache.org/bugzilla/enter_bug.cgi?product=Velocity&amp;component=Tools">bugzilla</a>
+        ticket.  The <a href="http://nagoya.apache.org/wiki/apachewiki.cgi?VelocityTools">Wiki</a>
+        can also be a good place to discuss and develop ideas.</p>
+
+        <p><strong>Checklist for Contributions</strong></p>
+        <ul>
+            <li><a href="http://jakarta.apache.org/velocity/code-standards.html">Velocity coding conventions</a></li>
+            <li>JavaDoc included (the more detailed the better)</li>
+            <li>Examples included (in JavaDoc or as stand-alone template example)</li>
+        </ul>
+    </section>
+
+ </body>
+</document>

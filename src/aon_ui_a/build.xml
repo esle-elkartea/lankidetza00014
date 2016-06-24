@@ -1,0 +1,1236 @@
+<?xml version="1.0"?>
+<project name="aon-ui-academy" basedir="." default="package.war">
+    <property file="ant.properties" />
+
+    <!-- ===================================================================== -->
+    <!-- CLASSPATH															   -->
+    <!-- ===================================================================== -->
+	<path id="classpath"> 
+		<fileset dir="${tomcat.home}">	
+			<include name="${javax.servlet.api.lib}"/>
+			<include name="${javax.jsp.api.lib}"/>
+			<include name="${catalina.ant.lib}"/>
+			<include name="${commons.modeler.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.framework.home}">
+			<include name="${aon.framework.lib}" />
+		</fileset>
+		
+		<fileset dir="${aon.ui.framework.home}">
+			<include name="${aon.ui.framework.lib}" />
+		</fileset>		
+		
+		<fileset dir="${aon.academy.home}/dist">	
+			<include name="${aon.academy.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.account.bridge.home}/dist">	
+			<include name="${aon.account.bridge.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.account.home}/dist">	
+			<include name="${aon.ui.account.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.calendar.home}/dist">
+			<include name="${aon.calendar.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.commercial.home}/dist">
+			<include name="${aon.commercial.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.company.home}/dist">
+			<include name="${aon.company.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.config.home}/dist">
+			<include name="${aon.config.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.csb.home}/dist">
+			<include name="${aon.csb.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.customer.home}/dist">
+			<include name="${aon.customer.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.employee.home}/dist">
+			<include name="${aon.employee.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.finance.home}/dist">
+			<include name="${aon.finance.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.geoZone.home}/dist">
+			<include name="${aon.geoZone.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.planner.home}/dist">
+			<include name="${aon.planner.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.product.home}/dist">
+			<include name="${aon.product.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.purchase.home}/dist">
+			<include name="${aon.purchase.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.registry.home}/dist">
+			<include name="${aon.registry.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.sales.home}/dist">
+			<include name="${aon.sales.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.tas.commercial.home}/dist">
+			<include name="${aon.tas.commercial.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.tas.delivery.home}/dist">
+			<include name="${aon.tas.delivery.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.tas.home}/dist">
+			<include name="${aon.tas.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.account.home}/dist">
+			<include name="${aon.ui.account.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.company.home}/dist">
+			<include name="${aon.ui.company.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.config.home}/dist">
+			<include name="${aon.ui.config.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.customer.home}/dist">
+			<include name="${aon.ui.customer.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.employee.home}/dist">
+			<include name="${aon.ui.employee.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.finance.home}/dist">
+			<include name="${aon.ui.finance.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.planner.home}/dist">
+			<include name="${aon.ui.planner.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.product.home}/dist">
+			<include name="${aon.ui.product.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.purchase.home}/dist">
+			<include name="${aon.ui.purchase.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.registry.home}/dist">
+			<include name="${aon.ui.registry.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.report.home}/dist">
+			<include name="${aon.ui.report.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.sales.home}/dist">
+			<include name="${aon.ui.sales.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.warehouse.home}/dist">
+			<include name="${aon.warehouse.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.warehouse.home}/dist">
+			<include name="${aon.ui.warehouse.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.security.bridge.home}">
+			<include name="${aon.security.bridge.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.home}">	
+			<include name="${org.hibernate.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.home}/lib">
+			<include name="${org.objectweb.asm.lib}"/>
+			<include name="${org.objectweb.asm-attrs.lib}"/>
+			<include name="${javax.jta.lib}"/>
+			<include name="${org.dom4j.lib}"/>
+			<include name="${net.sf.cglib.lib}"/>
+			<include name="${net.sf.ehcache.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.hibernate.annotations.home}">	
+			<include name="${org.hibernate.annotations.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.annotations.home}/lib">	
+			<include name="${ejb3.persistence.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.annotations.home}/lib">	
+			<include name="${org.hibernate.annotations.commons.lib}"/>
+		</fileset>
+			
+		<fileset dir="${org.apache.myfaces.home}/lib">
+			<include name="${org.apache.myfaces.api.lib}" />
+			<include name="${org.apache.myfaces.impl.lib}" />
+		</fileset>
+
+		<fileset dir="${org.apache.commons.digester.home}">	
+			<include name="${org.apache.commons.digester.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.apache.commons.beanutils.home}/">	
+			<include name="${org.apache.commons.beanutils.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.commons.collections.home}/">	
+			<include name="${org.apache.commons.collections.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.commons.logging.home}">	
+			<include name="${org.apache.commons.logging.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.commons.lang.home}">	
+			<include name="${org.apache.commons.lang.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.commons.fileupload.home}">	
+			<include name="${org.apache.commons.fileupload.lib}"/>
+		</fileset>
+		
+		<fileset dir="${net.sf.jasperreports.home}/dist">
+			<include name="${net.sf.jasperreports.lib}"/>
+		</fileset>
+		
+		<fileset dir="${net.sf.jasperreports.home}/lib">
+			<include name="${poi.lib}"/>
+			<include name="${com.lowagie.lib}"/>
+			<include name="${com.javaflow.lib}"/>
+		</fileset>
+
+		<fileset dir="${antlr.home}">
+			<include name="${antlr.lib}"/>
+		</fileset>
+		
+		<fileset dir="${ical4j.home}/build">
+			<include name="${ical4j.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.apache.tomahawk.home}/lib">
+			<include name="${org.apache.tomahawk.lib}"/>
+		</fileset>
+		
+	</path>
+	
+    <!-- ===================================================================== -->
+    <!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+    <!-- ===================================================================== -->
+    <property name="build.compiler" value="modern" />
+
+
+	<!-- ===================================================================== -->
+    <!-- CLEAN BUILD & DIST                                                    -->
+    <!-- ===================================================================== -->
+
+	<target name="clean" >
+	    <delete dir="${dist.dir}" />
+	    <delete dir="${build.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- PREPARE BUILD                                                         -->
+    <!-- ===================================================================== -->
+
+	<target name="prepare" depends="clean" >
+	    <mkdir dir="${build.dir}" />
+		<mkdir dir="${build-web-academy.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COPY                                                                  -->
+    <!-- ===================================================================== -->
+	<target name="copy" depends="prepare">
+		<copy todir="${build-web-academy.dir}">
+			<fileset dir="${src-academy.dir}">
+				<patternset>
+					<include name="**/*.xml" />
+					<include name="**/*.properties" />
+					<include name="**/*.jpg" />
+					<include name="**/*.gif" />
+					<include name="**/*.xsl" />					
+					<include name="**/*.jasper" />
+					<include name="**/*.vm" />
+					<exclude name="**/test/**" />
+				</patternset>
+			</fileset>
+		</copy>
+
+	</target>
+
+    <!-- ====================================================================== -->
+    <!-- BUILDING COMPONENTS													-->
+    <!-- ====================================================================== -->
+	<target name="build-components">
+
+		<echo>**** BUILDING AON-CSB [begin]</echo>
+		<ant dir="${aon.csb.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CSB  [end]*</echo>
+		
+		<echo>**** BUILDING AON-CALENDAR [begin]</echo>
+		<ant dir="${aon.calendar.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CALENDAR  [end]*</echo>
+		
+		<echo>**** BUILDING AON-PLANNER [begin]</echo>
+		<ant dir="${aon.planner.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-PLANNER  [end]*</echo>
+		
+		<echo>**** BUILDING AON-GEOZONE [begin]</echo>
+		<ant dir="${aon.geoZone.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-GEOZONE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-REGISTRY [begin]</echo>
+		<ant dir="${aon.registry.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-REGISTRY  [end]*</echo>
+		
+		<echo>**** BUILDING AON-COMPANY [begin]</echo>
+		<ant dir="${aon.company.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-COMPANY  [end]*</echo>
+		
+		<echo>**** BUILDING AON-CONFIG [begin]</echo>
+		<ant dir="${aon.config.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CONFIG  [end]*</echo>
+		
+		<echo>**** BUILDING AON-EMPLOYEE [begin]</echo>
+		<ant dir="${aon.employee.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-EMPLOYEE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-PRODUCT [begin]</echo>
+		<ant dir="${aon.product.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-PRODUCT  [end]*</echo>
+		
+		<echo>**** BUILDING AON-CUSTOMER [begin]</echo>
+		<ant dir="${aon.customer.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CUSTOMER  [end]*</echo>
+		
+		<echo>**** BUILDING AON-FINANCE [begin]</echo>
+		<ant dir="${aon.finance.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-FINANCE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-PURCHASE [begin]</echo>
+		<ant dir="${aon.purchase.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-PURCHASE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-SALES [begin]</echo>
+		<ant dir="${aon.sales.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-SALES  [end]*</echo>
+		
+		<echo>**** BUILDING AON-WAREHOUSE [begin]</echo>
+		<ant dir="${aon.warehouse.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-WAREHOUSE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-ACCOUNT [begin]</echo>
+		<ant dir="${aon.account.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-ACCOUNT  [end]*</echo>
+		
+		<echo>**** BUILDING AON-COMMERCIAL [begin]</echo>
+		<ant dir="${aon.commercial.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-COMMERCIAL  [end]*</echo>
+		
+		<echo>**** BUILDING AON-TAS [begin]</echo>
+		<ant dir="${aon.tas.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-TAS  [end]*</echo>
+		
+		<echo>**** BUILDING AON-ACCOUNT-BRIDGE [begin]</echo>
+		<ant dir="${aon.account.bridge.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-ACCOUNT-BRIDGE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-TAS-COMMERCIAL [begin]</echo>
+		<ant dir="${aon.tas.commercial.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-TAS-COMMERCIAL  [end]*</echo>
+		
+		<echo>**** BUILDING AON-TAS-DELIVERY [begin]</echo>
+		<ant dir="${aon.tas.delivery.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON- TAS-DELIVERY [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-PLANNER [begin]</echo>
+		<ant dir="${aon.ui.planner.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-PLANNER  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-REGISTRY [begin]</echo>
+		<ant dir="${aon.ui.registry.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-REGISTRY  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-COMPANY [begin]</echo>
+		<ant dir="${aon.ui.company.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-COMPANY  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-CONFIG [begin]</echo>
+		<ant dir="${aon.ui.config.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-CONFIG  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-EMPLOYEE [begin]</echo>
+		<ant dir="${aon.ui.employee.home}" 
+			 antfile="build.xml" 
+			 target="package.external.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-EMPLOYEE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-PRODUCT [begin]</echo>
+		<ant dir="${aon.ui.product.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-PRODUCT  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-CUSTOMER [begin]</echo>
+		<ant dir="${aon.ui.customer.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-CUSTOMER  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-FINANCE [begin]</echo>
+		<ant dir="${aon.ui.finance.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-FINANCE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-PURCHASE [begin]</echo>
+		<ant dir="${aon.ui.purchase.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-PURCHASE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-SALES [begin]</echo>
+		<ant dir="${aon.ui.sales.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-SALES  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-WAREHOUSE [begin]</echo>
+		<ant dir="${aon.ui.warehouse.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-WAREHOUSE  [end]*</echo>
+		
+		<echo>**** BUILDING AON-UI-ACCOUNT [begin]</echo>
+		<ant dir="${aon.ui.account.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-ACCOUNT  [end]*</echo>
+		
+		<echo>**** BUILDING AON- UI-REPORT[begin]</echo>
+		<ant dir="${aon.ui.report.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-REPORT  [end]*</echo>
+		
+		<echo>**** BUILDING AON-ACADEMY [begin]</echo>
+		<ant dir="${aon.academy.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-ACADEMY  [end]*</echo>
+
+	</target>	
+
+	<!-- ===================================================================== -->
+    <!-- COMPILE                        ,build-components					   -->
+    <!-- ===================================================================== -->
+	<target name="compile" depends="build-components,copy">
+
+		<javac destdir="${build-web-academy.dir}" optimize="on" debug="on">
+			<classpath refid="classpath" />
+			<src path="${src-academy.dir}"/>	
+			<exclude name="**/test/**" />
+		</javac>
+
+	</target>
+	
+	<!-- ===================================================================== -->
+    <!-- MAKE JARS                                                             -->
+    <!-- ===================================================================== -->
+    <target name="package.jar" depends="compile">
+        <mkdir dir="${dist.dir}" />
+
+	    <jar jarfile="${dist.dir}/${jar.web-academy.name}.jar"
+	         basedir="${build-web-academy.dir}">
+	    </jar>
+    	
+	</target>
+
+	<!-- ===================================================================== -->
+    <!-- MAKE WAR                                                              -->
+    <!-- ===================================================================== -->
+    <target name="package.war" depends="package.jar" >
+		<!-- ===================================== -->
+		<!--    Create inline ( Hypersonic ) DB    -->
+		<!-- =====================================
+		<property name="dir" value="/tmp" />
+		<property name="data.dir" value="${dir}/data" />
+	    <delete dir="${data.dir}" />
+		<mkdir dir="${data.dir}"/>
+		<java 
+			fork="true"
+			classname="com.code.aon.hsqldb.MySql2Hsql" >
+			<classpath>
+				<fileset dir="${dist.dir}">
+					<include name="*.jar"/>
+				</fileset>
+				<fileset dir="/JAVA/hsqldb/lib">
+					<include name="hsqldb.jar"/>
+				</fileset>
+				<fileset dir="/JAVA/mysql-connector-java-3.1.9">
+					<include name="mysql-connector-java-3.1.9-bin.jar"/>
+				</fileset>
+			</classpath>
+			<arg value="-hsql"/>
+			<arg value="jdbc:hsqldb:file:${data.dir}/bd" />
+		</java>	
+		===================================== -->
+
+		<war destfile="${dist.dir}/${name}.war" webxml="WebRoot/WEB-INF/web.xml">
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Created-By" value="Consulting and Development" />
+				<attribute name="Signature-Version" value="${version}" />
+			</manifest>
+			
+			<fileset dir="WebRoot" casesensitive="no"  >
+				<include name="index.jsp" />
+				<include name="*.pdf" />
+				<include name="hyperview.xhtml" />
+				<include name="finance/**" />
+				<include name="account/**" />
+				<include name="css/**" />
+				<include name="facelet/**" />
+				<include name="images/**" />
+				<include name="js/**" />
+				<include name="report/**" />
+				<include name="login/**" />
+				<exclude name="**/CVS/*" />
+			</fileset>
+
+			<!-- Copia los archivos asociados al Login -->
+			<!--
+			<fileset dir="/PROYECTOS/aon-ui-security/WebRoot" casesensitive="no"  >
+				<include name="login/**" />
+			</fileset>
+			-->
+
+			<webinf dir="WebRoot/WEB-INF" >
+				<include name="conf/**" />
+				<exclude name="jboss-web.xml" />
+				<include name="tomahawk.taglib.xml" />
+				<include name="facelet-taglib_1_0.dtd" />
+				<include name="faces-config.xml" />
+				<include name="profiles.xml" />
+			</webinf>
+
+			<!-- Own library -->
+			<lib dir="${dist.dir}" casesensitive="no" />
+
+			<!-- Internal libraries -->
+			<lib dir="${aon.framework.home}">
+				<include name="${aon.framework.lib}" />
+			</lib>
+			
+			<lib dir="${aon.ui.framework.home}">
+				<include name="${aon.ui.framework.lib}" />
+			</lib>		
+			
+			<lib dir="${aon.academy.home}/dist">	
+				<include name="${aon.academy.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.account.bridge.home}/dist">	
+				<include name="${aon.account.bridge.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.account.home}/dist">	
+				<include name="${aon.account.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.calendar.home}/dist">
+				<include name="${aon.calendar.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.commercial.home}/dist">
+				<include name="${aon.commercial.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.company.home}/dist">
+				<include name="${aon.company.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.config.home}/dist">
+				<include name="${aon.config.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.csb.home}/dist">
+				<include name="${aon.csb.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.customer.home}/dist">
+				<include name="${aon.customer.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.employee.home}/dist">
+				<include name="${aon.employee.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.finance.home}/dist">
+				<include name="${aon.finance.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.geoZone.home}/dist">
+				<include name="${aon.geoZone.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.planner.home}/dist">
+				<include name="${aon.planner.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.product.home}/dist">
+				<include name="${aon.product.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.purchase.home}/dist">
+				<include name="${aon.purchase.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.registry.home}/dist">
+				<include name="${aon.registry.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.sales.home}/dist">
+				<include name="${aon.sales.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.commercial.home}/dist">
+				<include name="${aon.tas.commercial.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.delivery.home}/dist">
+				<include name="${aon.tas.delivery.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.home}/dist">
+				<include name="${aon.tas.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.account.home}/dist">
+				<include name="${aon.ui.account.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.company.home}/dist">
+				<include name="${aon.ui.company.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.config.home}/dist">
+				<include name="${aon.ui.config.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.customer.home}/dist">
+				<include name="${aon.ui.customer.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.employee.home}/dist">
+				<include name="${aon.ui.employee.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.finance.home}/dist">
+				<include name="${aon.ui.finance.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.planner.home}/dist">
+				<include name="${aon.ui.planner.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.product.home}/dist">
+				<include name="${aon.ui.product.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.purchase.home}/dist">
+				<include name="${aon.ui.purchase.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.registry.home}/dist">
+				<include name="${aon.ui.registry.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.report.home}/dist">
+				<include name="${aon.ui.report.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.sales.home}/dist">
+				<include name="${aon.ui.sales.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.warehouse.home}/dist">
+				<include name="${aon.warehouse.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.warehouse.home}/dist">
+				<include name="${aon.ui.warehouse.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.security.bridge.home}">
+				<include name="${aon.security.bridge.lib}"/>
+			</lib>
+
+			<!-- External libraries -->
+			
+			<lib dir="${org.hibernate.home}">	
+				<include name="${org.hibernate.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.home}/lib">
+				<include name="${org.objectweb.asm.lib}"/>
+				<include name="${org.objectweb.asm-attrs.lib}"/>
+				<include name="${javax.jta.lib}"/>
+				<include name="${org.dom4j.lib}"/>
+				<include name="${net.sf.cglib.lib}"/>
+				<include name="${net.sf.ehcache.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.annotations.home}">	
+				<include name="${org.hibernate.annotations.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${ejb3.persistence.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${org.hibernate.annotations.commons.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.myfaces.home}/lib">
+				<include name="${org.apache.myfaces.api.lib}" />
+				<include name="${org.apache.myfaces.impl.lib}" />
+			</lib>
+
+			<lib dir="${org.apache.commons.digester.home}">	
+				<include name="${org.apache.commons.digester.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.beanutils.home}/">	
+				<include name="${org.apache.commons.beanutils.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.collections.home}/">	
+				<include name="${org.apache.commons.collections.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.logging.home}">	
+				<include name="${org.apache.commons.logging.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.lang.home}">	
+				<include name="${org.apache.commons.lang.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.fileupload.home}">	
+				<include name="${org.apache.commons.fileupload.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.codec.home}">	
+				<include name="${org.apache.commons.codec.lib}"/>
+			</lib>
+			
+			<lib dir="${net.sf.jasperreports.home}/dist">
+				<include name="${net.sf.jasperreports.lib}"/>
+			</lib>
+			
+			<lib dir="${net.sf.jasperreports.home}/lib">
+				<include name="${poi.lib}"/>
+				<include name="${com.lowagie.lib}"/>
+				<include name="${com.javaflow.lib}"/>
+			</lib>
+
+			<lib dir="${com.sun.facelets.home}/">
+				<include name="${com.sun.facelets.lib}"/>
+			</lib>
+			
+			<lib dir="${com.sun.facelets.home}/lib">
+				<include name="${javax.el.lib}" />
+				<include name="${com.sun.el.lib}" />
+			</lib>
+			
+			<lib dir="${antlr.home}">
+				<include name="${antlr.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.tomahawk.home}/lib">
+				<include name="${org.apache.tomahawk.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.velocity.home}">
+				<include name="${org.apache.velocity.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.velocity.tools.home}/lib">
+				<include name="${org.apache.velocity.tools.lib}"/>
+			</lib>
+			
+			<lib dir="${ical4j.home}/build">
+				<include name="${ical4j.lib}"/>
+			</lib>
+			
+		</war>
+    </target>
+
+	<!-- ===================================================================== -->
+    <!-- MAKE JBOSS WAR                                                        -->
+    <!-- ===================================================================== -->
+    <target name="jboss.war" depends="package.jar" >
+		<war destfile="${dist.dir}/${name}.war" webxml="WebRoot/WEB-INF/web.xml" duplicate="fail" >
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Created-By" value="Consulting and Development" />
+				<attribute name="Signature-Version" value="${version}" />
+			</manifest>
+			
+			<webinf dir="WebRoot/WEB-INF" >
+				<include name="conf/**" />
+				<include name="jboss-web.xml" />
+				<include name="profiles.xml" />
+				<include name="tomahawk.taglib.xml" />
+				<include name="facelet-taglib_1_0.dtd" />
+				<include name="faces-config.xml" />
+			</webinf>
+
+			<fileset dir="WebRoot" casesensitive="no"  >
+				<include name="index.jsp" />
+				<include name="*.pdf" />
+				<include name="hyperview.xhtml" />
+				<include name="finance/**" />
+				<include name="account/**" />
+				<include name="css/**" />
+				<include name="facelet/**" />
+				<include name="images/**" />
+				<include name="js/**" />
+				<include name="report/**" />
+				<include name="login/**" />
+				<exclude name="**/CVS/*" />
+			</fileset>
+
+			<!-- Copia los archivos asociados al Login -->
+			<!--
+			<fileset dir="/PROYECTOS/aon-ui-security/WebRoot" casesensitive="no"  >
+				<include name="login/**" />
+			</fileset>
+			-->
+			
+			<!-- Own library -->
+			<lib dir="${dist.dir}" casesensitive="no" />
+
+			<!-- Internal libraries -->
+			<lib dir="${aon.framework.home}">
+				<include name="${aon.framework.lib}" />
+			</lib>
+			
+			<lib dir="${aon.ui.framework.home}">
+				<include name="${aon.ui.framework.lib}" />
+			</lib>		
+			
+			<lib dir="${aon.academy.home}/dist">	
+				<include name="${aon.academy.lib}"/>
+			</lib>
+
+			<lib dir="${aon.account.home}/dist">	
+				<include name="${aon.account.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.account.bridge.home}/dist">	
+				<include name="${aon.account.bridge.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.calendar.home}/dist">
+				<include name="${aon.calendar.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.commercial.home}/dist">
+				<include name="${aon.commercial.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.company.home}/dist">
+				<include name="${aon.company.lib}"/>
+			</lib>
+	
+			<lib dir="${aon.config.home}/dist">
+				<include name="${aon.config.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.csb.home}/dist">
+				<include name="${aon.csb.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.customer.home}/dist">
+				<include name="${aon.customer.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.employee.home}/dist">
+				<include name="${aon.employee.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.finance.home}/dist">
+				<include name="${aon.finance.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.geoZone.home}/dist">
+				<include name="${aon.geoZone.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.planner.home}/dist">
+				<include name="${aon.planner.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.product.home}/dist">
+				<include name="${aon.product.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.purchase.home}/dist">
+				<include name="${aon.purchase.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.registry.home}/dist">
+				<include name="${aon.registry.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.sales.home}/dist">
+				<include name="${aon.sales.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.commercial.home}/dist">
+				<include name="${aon.tas.commercial.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.delivery.home}/dist">
+				<include name="${aon.tas.delivery.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.tas.home}/dist">
+				<include name="${aon.tas.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.account.home}/dist">
+				<include name="${aon.ui.account.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.company.home}/dist">
+				<include name="${aon.ui.company.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.config.home}/dist">
+				<include name="${aon.ui.config.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.customer.home}/dist">
+				<include name="${aon.ui.customer.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.employee.home}/dist">
+				<include name="${aon.ui.employee.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.finance.home}/dist">
+				<include name="${aon.ui.finance.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.planner.home}/dist">
+				<include name="${aon.ui.planner.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.product.home}/dist">
+				<include name="${aon.ui.product.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.purchase.home}/dist">
+				<include name="${aon.ui.purchase.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.registry.home}/dist">
+				<include name="${aon.ui.registry.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.report.home}/dist">
+				<include name="${aon.ui.report.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.sales.home}/dist">
+				<include name="${aon.ui.sales.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.warehouse.home}/dist">
+				<include name="${aon.warehouse.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.warehouse.home}/dist">
+				<include name="${aon.ui.warehouse.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.security.bridge.home}">
+				<include name="${aon.security.bridge.lib}"/>
+			</lib>
+			
+			<!-- External libraries -->
+			
+			<lib dir="${org.hibernate.home}/lib">
+				<include name="${org.objectweb.asm.lib}"/>
+				<include name="${org.objectweb.asm-attrs.lib}"/>
+				<include name="${javax.jta.lib}"/>
+				<include name="${net.sf.ehcache.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${org.hibernate.annotations.commons.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.myfaces.home}/lib">
+				<include name="${org.apache.myfaces.api.lib}" />
+				<include name="${org.apache.myfaces.impl.lib}" />
+			</lib>
+
+			<lib dir="${org.apache.commons.digester.home}">	
+				<include name="${org.apache.commons.digester.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.beanutils.home}/">	
+				<include name="${org.apache.commons.beanutils.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.lang.home}">	
+				<include name="${org.apache.commons.lang.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.fileupload.home}">	
+				<include name="${org.apache.commons.fileupload.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.codec.home}">	
+				<include name="${org.apache.commons.codec.lib}"/>
+			</lib>
+
+			<lib dir="${net.sf.jasperreports.home}/dist">
+				<include name="${net.sf.jasperreports.lib}"/>
+			</lib>
+			
+			<lib dir="${net.sf.jasperreports.home}/lib">
+				<include name="${poi.lib}"/>
+				<include name="${com.lowagie.lib}"/>
+				<include name="${com.javaflow.lib}"/>
+			</lib>
+
+			<lib dir="${com.sun.facelets.home}/">
+				<include name="${com.sun.facelets.lib}"/>
+			</lib>
+			
+			<lib dir="${com.sun.facelets.home}/lib">
+				<include name="${com.sun.el.lib}" />
+			</lib>
+			
+			<lib dir="${org.apache.tomahawk.home}/lib">
+				<include name="${org.apache.tomahawk.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.velocity.home}">
+				<include name="${org.apache.velocity.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.velocity.tools.home}/lib">
+				<include name="${org.apache.velocity.tools.lib}"/>
+			</lib>
+			
+			<lib dir="${ical4j.home}/build">
+				<include name="${ical4j.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.dbcp.home}">	
+				<include name="${org.apache.commons.dbcp.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.pool.home}">	
+				<include name="${org.apache.commons.pool.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.el.home}/">
+				<include name="${org.apache.commons.el.lib}" />
+			</lib>
+
+			
+<!--		LIBRERIAS QUE NO DEBER IR EN JBOSS-4.2.1.GA			
+
+			<lib dir="${antlr.home}">
+				<include name="${antlr.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.home}/lib">
+				<include name="${net.sf.cglib.lib}"/>
+				<include name="${org.dom4j.lib}"/>
+			</lib>
+	
+			<lib dir="${org.apache.commons.collections.home}/">	
+				<include name="${org.apache.commons.collections.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.logging.home}">	
+				<include name="${org.apache.commons.logging.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${ejb3.persistence.lib}"/>
+				<include name="${org.hibernate.annotations.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}">	
+				<include name="${org.hibernate.annotations.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${ejb3.persistence.lib}"/>
+			</lib>
+
+			<lib dir="${com.sun.facelets.home}/lib">
+				<include name="${javax.el.lib}" />
+			</lib>
+
+			<lib dir="${org.hibernate.home}">	
+				<include name="${org.hibernate.lib}"/>
+			</lib>
+			
+-->
+		</war>
+    </target>
+</project>
+

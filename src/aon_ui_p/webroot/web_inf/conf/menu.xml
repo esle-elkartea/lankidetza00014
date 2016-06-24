@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root key="aon_menu">
+	<option ref="diary_search_success" key="aon_menu_health_diary" >
+		<actionListener action="#{launcher.onStart}"/>
+	</option>
+</root>

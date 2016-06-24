@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JASPER_REPORTS_1_3_2_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_DIGESTER_1_7_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_COLLECTIONS_1_3_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JUNIT_4_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_BEANUTILS_1_7_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LANG_2_2_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/VELOCITY_1_4_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/VELOCITY_TOOLS_1_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FOP_0_20_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

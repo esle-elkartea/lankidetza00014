@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_ANNOTATIONS_3_3_0_LIBS" kind="con"/>
+	<classpathentry path="/aon-geozone" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-registry" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LOGGING_1_1_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_3_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_COLLECTIONS_1_3_1_LIB" kind="con"/>
+	<classpathentry path="/aon-company" combineaccessrules="false" kind="src"/>
+	<classpathentry path="bin" kind="output"/>
+</classpath>

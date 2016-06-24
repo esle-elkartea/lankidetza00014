@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<project name="aon-ql" basedir="." default="package.jar">
+    <property file="ant.properties" />
+
+    <!-- ===================================================================== -->
+    <!-- CLASSPATH															   -->
+    <!-- ===================================================================== -->
+	<path id="classpath"> 
+		<fileset dir="${aon.framework.home}">
+			<include name="${aon.framework.lib}" />
+		</fileset>
+				
+		<fileset dir="${org.hibernate.annotations.home}/lib">	
+			<include name="${javax.persistence.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.hibernate.home}">
+			<include name="${org.hibernate.lib}"/>
+		</fileset>
+	</path>
+	
+    <!-- ===================================================================== -->
+    <!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+    <!-- ===================================================================== -->
+    <property name="build.compiler" value="modern" />
+
+
+    <!-- ===================================================================== -->
+    <!-- CLEAN BUILD & DIST                                                    -->
+    <!-- ===================================================================== -->
+
+	<target name="clean">
+	    <delete dir="${dist.dir}" />
+	    <delete dir="${build.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- PREPARE BUILD                                                         -->
+    <!-- ===================================================================== -->
+
+	<target name="prepare" depends="clean" >
+	    <mkdir dir="${build.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COPY                                                                  -->
+    <!-- ===================================================================== -->
+	<target name="copy" depends="prepare">
+	    <copy todir="${build.dir}">
+	      <fileset dir="${src.dir}">
+	        <patternset>
+	          <include name="**/*.xml" />
+	          <include name="**/*.properties" />
+			  <exclude name="com/code/aon/test/**"/>
+	          <exclude name="hibernate.cfg.xml" />	
+	        </patternset>
+	      </fileset>
+	    </copy>
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COMPILE                                                       	       -->
+    <!-- ===================================================================== -->
+    <target name="compile" depends="copy">
+        <javac destdir="${build.dir}" optimize="on" debug="on">
+            <src path="${src.dir}"/>
+            <classpath refid="classpath" />
+        	<exclude name="com/code/aon/test/**"/>
+        </javac>
+
+    </target>
+
+	<!-- ===================================================================== -->
+    <!-- MAKE JARS                                                             -->
+    <!-- ===================================================================== -->
+    <target name="package.jar" depends="compile">
+        <mkdir dir="${dist.dir}" />
+        <jar jarfile="${dist.dir}/${jar.name}.jar"
+             basedir="${build.dir}">
+        </jar>
+	</target>
+    <!-- ===================================================================== -->
+    <!-- JAVADOC		                                                       -->
+    <!-- ===================================================================== -->
+	<target name="javadoc">
+		<javadoc packagenames="*"
+		           sourcepath="src"
+		           defaultexcludes="yes"
+		           destdir="${dist.dir}/docs/api"
+		           author="false"
+		           version="false"
+		           use="true"
+		           windowtitle="${name}-${version} API"
+		           failonerror="false">
+            <classpath refid="classpath" />
+		    <doctitle><![CDATA[<h1>${name}-${version} API</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2006 Consulting & Development. All Rights Reserved.</i>]]></bottom>
+		    <tag name="todo" scope="all" description="To do:"/>
+		    <tag name="TODO" scope="all" description="To do:"/>
+		  </javadoc>	
+		
+		<zip destfile="${dist.dir}/docs/${name}-${version}-api.zip">
+			<fileset dir="${dist.dir}/docs/api" casesensitive="no" >
+				<include name="**/*.*" />
+			</fileset>
+		</zip> 
+		<!--
+	    <delete dir="${dist.dir}/docs" />
+		-->
+	</target>
+	
+</project>
+

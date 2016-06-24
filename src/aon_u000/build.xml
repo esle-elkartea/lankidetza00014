@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<project name="aon-ui-report" basedir="." default="package.jar">
+	<property file="ant.properties" />
+
+	<!-- ===================================================================== -->
+	<!-- CLASSPATH															   -->
+	<!-- ===================================================================== -->
+	<path id="classpath">
+		<fileset dir="${tomcat.home}/common/lib">
+			<include name="${javax.servlet.api.lib}" />
+		</fileset>
+
+		<fileset dir="${org.apache.myfaces.home}/lib">
+			<include name="${org.apache.myfaces.api.lib}" />
+			<include name="${org.apache.myfaces.impl.lib}" />
+		</fileset>
+
+		<fileset dir="${net.sf.jasperreports.home}/dist">
+			<include name="${net.sf.jasperreports.lib}" />
+		</fileset>
+
+		<fileset dir="${commons-digester.home}/">
+			<include name="${commons-digester.lib}" />
+		</fileset>
+
+		<fileset dir="${commons-beanutils.home}/">
+			<include name="${commons-beanutils.lib}" />
+		</fileset>
+
+		<fileset dir="${org.apache.commons.lang.home}">	
+			<include name="${org.apache.commons.lang.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.velocity.home}">	
+			<include name="${org.velocity.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.velocity-tools.home}/lib">	
+			<include name="${org.velocity-tools.lib}"/>
+		</fileset>
+			
+		<fileset dir="${org.apache.fop.home}/">	
+			<include name="${org.apache.fop.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.framework.home}">
+			<include name="${aon.framework.lib}" />
+		</fileset>
+		
+		<fileset dir="${aon.ui.framework.home}">
+			<include name="${aon.ui.framework.lib}" />
+		</fileset>
+		
+	</path>
+
+	<!-- ===================================================================== -->
+	<!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+	<!-- ===================================================================== -->
+	<property name="build.compiler" value="modern" />
+
+
+	<!-- ===================================================================== -->
+	<!-- CLEAN BUILD & DIST                                                    -->
+	<!-- ===================================================================== -->
+
+	<target name="clean">
+		<delete dir="${dist.dir}" />
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- PREPARE BUILD                                                         -->
+	<!-- ===================================================================== -->
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- COPY                                                                  -->
+	<!-- ===================================================================== -->
+	<target name="copy" depends="prepare">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+				<patternset>
+					<include name="**/*.xml" />
+					<include name="**/*.dtd" />
+					<include name="**/*.gif" />
+					<include name="**/*.jpg" />
+					<include name="**/*.xsl" />
+					<include name="**/*.dtd" />
+					<include name="**/*.ent" />
+					<exclude name="com/code/aon/ui/report/test/**" />
+				</patternset>
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- COMPILE                                                       	       -->
+	<!-- ===================================================================== -->
+	<target name="compile" depends="copy">
+		<javac destdir="${build.dir}" optimize="on" debug="on">
+			<src path="${src.dir}" />
+			<classpath refid="classpath" />
+			<exclude name="com/code/aon/ui/report/test/**" />
+		</javac>
+
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- MAKE JARS                                                             -->
+	<!-- ===================================================================== -->
+	<target name="package.jar" depends="compile">
+		<mkdir dir="${dist.dir}" />
+		<jar jarfile="${dist.dir}/${jar.name}.jar" basedir="${build.dir}">
+		</jar>
+	</target>
+
+	<!-- ===================================================================== -->
+	<!-- JAVADOC                                                       	       -->
+	<!-- ===================================================================== -->
+	<target name="javadoc">
+		<mkdir dir="${api.dir}" />
+
+		<javadoc protected="true" destdir="${api.dir}" author="true" version="true" use="true" windowtitle="AON UI REPORT" stylesheetfile="${api.dir}/jdstyle.css">
+
+			<classpath refid="classpath" />
+
+			<packageset dir="${src.dir}">
+				<include name="com/code/aon/ui/report/**" />
+				<exclude name="com/code/aon/ui/report/test/**" />
+			</packageset>
+
+			<doctitle>
+				<![CDATA[<h1>${name}-${version}</h1>]]></doctitle>
+		<bottom>
+			<![CDATA[<i>Copyright &#169; 2005 Consulting &amp; Development S.A. All Rights Reserved.</i>]]></bottom>
+
+	<link href="http://java.sun.com/j2se/1.3/docs/api" />
+	<link href="http://jasperreports.sourceforge.net/api" />
+	<link href="http://jasperreports.sourceforge.net/api" />
+	<link href="http://java.sun.com/j2ee/javaserverfaces/1.1_01/docs/api/" />
+</javadoc>
+</target>
+
+
+</project>
+

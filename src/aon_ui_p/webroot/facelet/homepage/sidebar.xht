@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:t="http://myfaces.apache.org/tomahawk"      
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<t:stylesheet path="/css/aon.css" />
+	<t:stylesheet path="/css/layout.css" />	
+
+</head>
+<body>
+
+<ui:composition>
+
+<t:div id="aon-sidebar-region" forceId="#{true}" styleClass="aon-sidebar-region-#{treeMenu.hidden ? 'hidden' : 'visible'}">	
+	<h:form id="treeMenuForm">
+	    <t:div styleClass="aon-sidebar-visibility aon-sidebar-visibility-#{treeMenu.hidden ? 'hidden' : 'visible'}">
+			<t:commandLink id="_menu" forceId="#{true}" immediate="true" actionListener="#{treeMenu.toggleVisibility}">
+				<f:verbatim>&#160;</f:verbatim>
+			</t:commandLink>
+		</t:div> 
+		<t:div styleClass="aon-sidebar-tree" rendered="#{!treeMenu.hidden}">		
+			<t:div styleClass="aon-sidebar-tree-title">	
+				<h:outputText value="#{treeMenu.title}"/>
+			</t:div>
+			<t:div styleClass="aon-sidebar-tree-body">	
+				<t:tree2
+					value="#{treeMenu.treeModel}"
+					id="sidebar-tree"
+					var="sbnode"
+					varNodeToggler="sbnt"
+					binding="#{treeMenu.htmlTree}"			
+					showRootNode="false"
+					showLines="true"
+					showNav="false"				
+					clientSideToggle="false"
+					imageLocation="/images/sidebar"
+	            >
+					<f:facet name="root">					
+						<h:commandLink
+							immediate="true"
+							action="#{sbnt.toggleExpanded}"
+							id="menuTreeRoot">
+							<h:outputText value="#{sbnode.description}"/>
+	                    </h:commandLink>	
+	                    			
+					</f:facet>
+					<f:facet name="menu">
+						<t:div styleClass="#{treeMenu.selected ? 'aon-sidebar-tree-selected': ''}" >			
+							<t:div styleClass="aon-sidebar-tree-branch">
+								<h:commandLink styleClass="aon-sidebar-tree-branch-icon"
+									immediate="true"
+									action="#{treeMenu.menuAction}"
+									actionListener="#{treeMenu.pressed}"							
+									id="#{treeMenu.folderId}">
+									
+									<t:div styleClass="aon-sidebar-tree-branch-icon-minus" rendered="#{sbnt.nodeExpanded}">
+										<f:verbatim>&#160;</f:verbatim>
+									</t:div>
+									<t:div styleClass="aon-sidebar-tree-branch-icon-plus" rendered="#{!sbnt.nodeExpanded}">
+										<f:verbatim>&#160;</f:verbatim>
+									</t:div>
+								</h:commandLink>
+								<h:commandLink styleClass="aon-sidebar-tree-branch-link"
+									immediate="true"
+									action="#{treeMenu.menuTextAction}"
+									actionListener="#{treeMenu.pressed}"	
+									id="#{treeMenu.menuId}">
+									<h:outputText value="#{sbnode.description}" styleClass="aon-sidebar-tree-branch-text"/>
+								</h:commandLink>
+							</t:div>						
+						</t:div>
+					</f:facet>
+					<f:facet name="option">
+						<t:div id="optiondiv1" styleClass="#{treeMenu.selected ? ' aon-sidebar-tree-selected' : '' }" >			
+							<t:div id="optiondiv2" styleClass="aon-sidebar-tree-leaf">
+								<h:commandLink styleClass="aon-sidebar-tree-leaf-link"
+									target="#{sbnode.menuItem.target}"
+									immediate="true"
+									action="#{treeMenu.nodeAction}"
+									actionListener="#{treeMenu.pressed}"
+									id="#{treeMenu.nodeId}"
+									rendered="#{!sbnode.menuItem.external}">
+									<h:outputText value="#{sbnode.description}" />
+								</h:commandLink>
+								<h:outputLink styleClass="aon-sidebar-tree-leaf-link"
+									target="#{sbnode.menuItem.target}"
+									value="#{sbnode.menuItem.reference}"
+									rendered="#{sbnode.menuItem.external and !sbnode.menuItem.contextRelative}">
+									<h:outputText value="#{sbnode.description}" />
+								</h:outputLink>
+								<h:outputLink styleClass="aon-sidebar-tree-leaf-link"
+									target="#{sbnode.menuItem.target}"
+									value="#{facesContext.externalContext.requestContextPath}#{sbnode.menuItem.reference}"
+									rendered="#{sbnode.menuItem.external and sbnode.menuItem.contextRelative}">
+									<h:outputText value="#{sbnode.description}" />
+								</h:outputLink>
+	 						</t:div>
+						</t:div>				
+					</f:facet>
+				</t:tree2>
+			</t:div>
+		</t:div>
+	</h:form>		
+</t:div>			
+
+</ui:composition>
+	
+</body>
+</html>

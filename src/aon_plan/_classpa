@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/JUNIT_4_1_LIB" kind="con"/>
+	<classpathentry path="/aon-calendar" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/MYFACES_IMPL_1_1_5_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_4_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_ANNOTATIONS_3_3_0_LIBS" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/TOMAHAWK_1_1_5_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/ICAL4J_0_9_16_BUILD" kind="con"/>
+	<classpathentry path="bin" kind="output"/>
+</classpath>

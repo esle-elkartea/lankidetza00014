@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-product"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-report"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_COLLECTIONS_1_3_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LOGGING_1_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_3_LIBS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSP_API_2_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JASPER_REPORTS_1_3_2_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FACELETS_1_1_11_LIBS"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-registry"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-geozone"/>
+	<classpathentry kind="var" path="ITEXT_1_3_1_VAR"/>
+	<classpathentry kind="var" path="COMMONS_JAVAFLOW_20060411_VAR"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_FILEUPLOAD_1_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-company"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

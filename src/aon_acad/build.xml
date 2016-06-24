@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<project name="aon-academy" basedir="." default="package.jar">
+    <property file="ant.properties" />
+
+    <!-- ===================================================================== -->
+    <!-- CLASSPATH															   -->
+    <!-- ===================================================================== -->
+	<path id="classpath"> 
+		<fileset dir="${aon.framework.home}">
+			<include name="${aon.framework.lib}" />
+		</fileset>
+		
+		<fileset dir="${aon.company.home}/dist">	
+			<include name="${aon.company.lib}"/>
+		</fileset>
+			
+		<fileset dir="${aon.employee.home}/dist">	
+			<include name="${aon.employee.lib}"/>
+		</fileset>
+			
+		<fileset dir="${aon.registry.home}/dist">	
+			<include name="${aon.registry.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.sales.home}/dist">	
+			<include name="${aon.sales.lib}"/>
+		</fileset>		
+
+		<fileset dir="${aon.customer.home}/dist">	
+			<include name="${aon.customer.lib}"/>
+		</fileset>		
+
+		<fileset dir="${org.hibernate.home}">
+			<include name="${org.hibernate.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.hibernate-annotations.home}">
+			<include name="${org.hibernate-annotations.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate-annotations.home}/lib">
+			<include name="${javax.persistence.lib}"/>
+		</fileset>
+		
+	</path>
+
+	<!-- ===================================================================== -->
+    <!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+    <!-- ===================================================================== -->
+    <property name="build.compiler" value="modern" />
+
+
+    <!-- ===================================================================== -->
+    <!-- CLEAN BUILD & DIST                                                    -->
+    <!-- ===================================================================== -->
+
+	<target name="clean">
+	    <delete dir="${dist.dir}" />
+	    <delete dir="${build.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- PREPARE BUILD                                                         -->
+    <!-- ===================================================================== -->
+
+	<target name="prepare" depends="clean" >
+	    <mkdir dir="${build.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COPY                                                                  -->
+    <!-- ===================================================================== -->
+	<target name="copy" depends="prepare">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+				<patternset>
+					<include name="**/*.xml" />
+					<include name="**/*.properties" />
+					<exclude name="com/code/aon/test/**"/>
+					<exclude name="hibernate.cfg.xml" />
+				</patternset>
+			</fileset>
+	    </copy>
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COMPILE                                                       	       -->
+    <!-- ===================================================================== -->
+    <target name="compile" depends="copy">
+        <javac destdir="${build.dir}" optimize="on" debug="on">
+            <src path="${src.dir}"/>
+            <classpath refid="classpath" />
+		    <exclude name="com/code/aon/test/**"/>
+        </javac>
+
+    </target>
+
+    <!-- ===================================================================== -->
+    <!-- MAKE JARS                                                             -->
+    <!-- ===================================================================== -->
+    <target name="package.jar" depends="compile">
+        <mkdir dir="${dist.dir}" />
+        <jar jarfile="${dist.dir}/${jar.name}.jar"
+             basedir="${build.dir}">
+        </jar>
+	</target>
+
+</project>
+

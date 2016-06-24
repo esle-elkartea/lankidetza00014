@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:h="http://java.sun.com/jsf/html">
+<body>
+
+<ui:composition>
+
+	<t:div id="aon-scroll-area" forceId="#{true}">
+		<t:div styleClass="aon-scroll-area-internal">
+			<!-- start of bag panel -->
+			<!-- start of flow layout -->
+			<h:panelGrid columns="2" cellspacing="0" cellpadding="0" dir="true" > 
+			    <h:panelGrid columns="1">
+					<f:facet name="header">
+						<t:div style="background-color:#EEF0F3;text-align:left;">
+							<h:outputText value="#{bundle.aon_calendar_label}" style="color:#304478;font-weight:bold;font-size:15px;"/>
+						</t:div>
+					</f:facet>
+			        <t:inputCalendar
+			            id="plannerNavigator"
+			            monthYearRowClass="surgeryYearMonthHeader"
+			            weekRowClass="surgeryWeekHeader"
+			            currentDayCellClass="surgeryCurrentDayCell"
+			            value="#{planner.date}"
+			            valueChangeListener="#{planner.calendarValueChanged}"
+			            binding="#{planner.dateInput}"/>
+			
+					<ui:include src="/facelet/planner/action/shift.xhtml" />
+			    </h:panelGrid>
+			
+			    <h:panelGrid columns="1" cellpadding="2" width="100%">
+					<f:facet name="header">
+				        <h:panelGrid columns="2" columnClasses="tab-input, inp" style="background-color:#EEF0F3;width:100%;">
+							<h:outputText value="#{bundle.aon_calendar_label}" style="color:#304478;font-weight:bold;"/>
+							<h:panelGroup>
+								<t:commandButton id="day_0" forceId="#{true}" styleClass="view-day" value="#{bundle.aon_planner_day_label}"
+												actionListener="#{planner.calendarView}" onchange="this.form.submit();" />
+								<t:commandButton id="weekwork_1" forceId="#{true}" styleClass="view-weekwork" value="#{bundle.aon_planner_weekwork_label}"
+												actionListener="#{planner.calendarView}" onchange="this.form.submit();" />
+								<t:commandButton id="week_2" forceId="#{true}" styleClass="view-week" value="#{bundle.aon_planner_week_label}"
+												actionListener="#{planner.calendarView}" onchange="this.form.submit();" />
+								<t:commandButton id="month_3" forceId="#{true}" styleClass="view-month" value="#{bundle.aon_planner_month_label}"
+												actionListener="#{planner.calendarView}" onchange="this.form.submit();" />
+							</h:panelGroup>
+						</h:panelGrid>
+					</f:facet>
+					<t:div style="overflow:auto;height:500px;width:100%" >
+				        <t:schedule id="schedule" value="#{planner.scheduleModel}"
+							tooltip="#{planner.tooltip}" theme="#{planner.theme}" readonly="#{planner.readonly}" 							rendered="#{true}" visibleEndHour="18" visibleStartHour="8"
+							workingEndHour="17" workingStartHour="9" />
+					</t:div>
+			    </h:panelGrid>
+			
+			</h:panelGrid>
+		</t:div>
+	</t:div>
+
+</ui:composition>
+
+</body>
+</html>

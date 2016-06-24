@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<project name="aon-ui-employee" basedir="." default="package.jar">
+    <property file="ant.properties" />
+
+    <!-- ===================================================================== -->
+    <!-- CLASSPATH															   -->
+    <!-- ===================================================================== -->
+	<path id="classpath"> 
+		<fileset dir="${tomcat.home}/lib">	
+			<include name="${javax.servlet.api.lib}"/>
+			<include name="${javax.jsp.api.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.framework.home}/">	
+			<include name="${aon.framework.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.framework.home}/">	
+			<include name="${aon.ui.framework.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.security.home}/">	
+			<include name="${aon.security.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.security.bridge.home}/">	
+			<include name="${aon.security.bridge.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.config.home}/dist">	
+			<include name="${aon.config.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.geozone.home}/dist">	
+			<include name="${aon.geozone.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.calendar.home}/dist">
+			<include name="${aon.calendar.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.planner.home}/dist">
+			<include name="${aon.planner.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.registry.home}/dist">	
+			<include name="${aon.registry.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.company.home}/dist">	
+			<include name="${aon.company.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.employee.home}/dist">	
+			<include name="${aon.employee.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.config.home}/dist">
+			<include name="${aon.ui.config.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.planner.home}/dist">
+			<include name="${aon.ui.planner.lib}"/>
+		</fileset>
+		
+		<fileset dir="${aon.ui.registry.home}/dist">	
+			<include name="${aon.ui.registry.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.company.home}/dist">	
+			<include name="${aon.ui.company.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.home}">
+			<include name="${org.hibernate.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.hibernate.annotations.home}">	
+			<include name="${org.hibernate.annotations.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.hibernate.annotations.home}/lib">	
+			<include name="${ejb3.persistence.lib}"/>
+			<include name="${org.hibernate.annotations.commons.lib}"/>
+		</fileset>
+
+		<fileset dir="${com.sun.facelets.home}">
+			<include name="${com.sun.facelets.lib}"/>
+		</fileset>
+
+		<fileset dir="${com.sun.facelets.home}/lib">
+			<include name="${javax.el.lib}"/>
+			<include name="${com.sun.el.lib}"/>
+		</fileset>
+		
+		<fileset dir="${org.apache.commons.lang.home}">	
+			<include name="${org.apache.commons.lang.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.commons.logging.home}">	
+			<include name="${org.apache.commons.logging.lib}"/>
+		</fileset>
+
+		<fileset dir="${org.apache.myfaces.home}/lib">
+			<include name="${org.apache.myfaces.api.lib}" />
+			<include name="${org.apache.myfaces.impl.lib}" />
+		</fileset>
+		
+		<fileset dir="${org.apache.tomahawk.home}/lib">
+			<include name="${org.apache.tomahawk.lib}"/>
+		</fileset>
+
+		<fileset dir="${aon.ui.report.home}/dist">	
+			<include name="${aon.ui.report.lib}"/>
+		</fileset>
+
+		<fileset dir="${ical4j.home}">
+			<include name="${ical4j.lib}"/>
+		</fileset>
+
+		<pathelement location="${build-web-employee.dir}"/>
+
+	</path>
+
+	<!-- ===================================================================== -->
+    <!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+    <!-- ===================================================================== -->
+    <property name="build.compiler" value="modern" />
+
+
+    <!-- ===================================================================== -->
+    <!-- CLEAN BUILD & DIST                                                    -->
+    <!-- ===================================================================== -->
+
+	<target name="clean">
+	    <delete dir="${dist.dir}" />
+		<delete dir="${build-web-employee.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- PREPARE BUILD                                                         -->
+    <!-- ===================================================================== -->
+
+	<target name="prepare" depends="clean" >
+	    <mkdir dir="${build.dir}" />
+		<mkdir dir="${build-web-employee.dir}" />
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- COPY                                                                  -->
+    <!-- ===================================================================== -->
+	<target name="copy" depends="prepare">
+		<copy todir="${build-web-employee.dir}">
+			<fileset dir="${src.dir}">
+				<patternset>
+					<include name="**/*.xml" />
+					<include name="**/*.properties" />
+					<include name="**/*.jasper" />
+					<exclude name="com/code/aon/test/**"/>
+				</patternset>
+			</fileset>
+	    </copy>
+	</target>
+
+    <!-- ====================================================================== -->
+    <!-- BUILDING COMPONENTS													-->
+    <!-- ====================================================================== -->
+	<target name="build-components" >
+
+		<echo>**** BUILDING AON-REGISTRY [begin]</echo>
+		<ant dir="${aon.registry.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-REGISTRY [end]</echo>
+
+		<echo>**** BUILDING AON-COMPANY [begin]</echo>
+		<ant dir="${aon.company.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-COMPANY [end]</echo>
+
+		<echo>**** BUILDING AON-CONFIG [begin]</echo>
+		<ant dir="${aon.config.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CONFIG [end]</echo>
+
+		<echo>**** BUILDING AON-CALENDAR [begin]</echo>
+		<ant dir="${aon.calendar.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-CALENDAR [end]</echo>
+
+		<echo>**** BUILDING AON-PLANNER [begin]</echo>
+		<ant dir="${aon.planner.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-PLANNER [end]</echo>
+
+		<echo>**** BUILDING AON-UI-REGISTRY [begin]</echo>
+		<ant dir="${aon.ui.registry.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-REGISTRY [end]</echo>
+
+		<echo>**** BUILDING AON-UI-PLANNER [begin]</echo>
+		<ant dir="${aon.ui.planner.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-PLANNER [end]</echo>
+
+		<echo>**** BUILDING AON-UI-COMPANY [begin]</echo>
+		<ant dir="${aon.ui.company.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-COMPANY [end]</echo>
+
+		<echo>**** BUILDING AON-UI-CONFIG [begin]</echo>
+		<ant dir="${aon.ui.config.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-CONFIG [end]</echo>
+
+		<echo>**** BUILDING AON-UI-REPORT [begin]</echo>
+		<ant dir="${aon.ui.report.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-UI-REPORT [end]</echo>
+
+		<echo>**** BUILDING AON-EMPLOYEE [begin]</echo>
+		<ant dir="${aon.employee.home}" 
+			 antfile="build.xml" 
+			 target="package.jar" 
+			 inheritall="false">
+		</ant>
+		<echo>**** BUILDING AON-EMPLOYEE [end]</echo>
+
+	</target>	
+
+	<!-- ===================================================================== -->
+    <!-- COMPILE                                      	  					   -->
+    <!-- ===================================================================== -->
+    <target name="compile" depends="build-components">
+        <javac destdir="${build-web-employee.dir}" optimize="on" debug="on">
+            <src path="${src.dir}"/>
+            <classpath refid="classpath" />
+		    <exclude name="com/code/aon/test/**"/>
+		    <exclude name="com/code/aon/common/jsf/**"/>
+        </javac>
+
+    </target>
+
+    <!-- ===================================================================== -->
+    <!-- MAKE JARS                                                             -->
+    <!-- ===================================================================== -->
+    <target name="package.jar" depends="copy,compile">
+        <mkdir dir="${dist.dir}" />
+	    <jar jarfile="${dist.dir}/${jar.web-employee.name}.jar"
+	         basedir="${build-web-employee.dir}">
+        </jar>
+	</target>
+
+    <!-- ===================================================================== 	-->
+    <!-- MAKE JARS. EXTERNAL USE												-->
+    <!-- ===================================================================== 	-->
+    <target name="package.external.jar" depends="prepare,compile">
+    	<mkdir dir="${dist.dir}" />
+
+    	<copy todir="${build-web-employee.dir}">
+			<fileset dir="${src.dir}">
+				<patternset>
+					<include name="**/*.xml" />
+					<include name="**/*.properties" />
+					<exclude name="hibernate.cfg.xml" />
+					<exclude name="com/code/aon/test/**"/>
+				</patternset>
+			</fileset>
+	    </copy>
+
+	    <jar jarfile="${dist.dir}/${jar.web-employee.name}.jar"
+	         basedir="${build-web-employee.dir}">
+        </jar>
+	</target>
+
+	<!-- ===================================================================== -->
+    <!-- MAKE WAR                                                              -->
+    <!-- ===================================================================== -->
+    <target name="package.war" depends="package.jar" >
+		<war destfile="${dist.dir}/${name}.war" webxml="WebRoot/WEB-INF/web.xml">
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Created-By" value="Consulting and Development" />
+				<attribute name="Signature-Version" value="${version}" />
+			</manifest>
+			
+			<fileset dir="WebRoot" casesensitive="no"  >
+				<include name="index.jsp" />
+				<include name="css/**" />
+				<include name="facelet/**" />
+				<include name="images/**" />
+				<include name="js/**" />
+				<include name="jscalendar/**" />
+				<include name="jscalendar-1.0/**" />
+				<exclude name="**/CVS/*" />
+			</fileset>
+
+			<webinf dir="WebRoot/WEB-INF" >
+				<include name="conf/**" />
+				<include name="profiles.xml" />
+				<include name="tomahawk.taglib.xml" />
+				<include name="facelet-taglib_1_0.dtd" />
+			</webinf>
+
+			<!-- Copia los archivos asociados al Login -->
+			<fileset dir="/PROYECTOS/aon-ui-security/WebRoot" casesensitive="no"  >
+				<include name="login/**" />
+			</fileset>
+
+			<!-- Own library -->
+			<lib dir="${dist.dir}" casesensitive="no" />
+
+			<!-- Framework libraries -->
+			<lib dir="${aon.framework.home}">	
+				<include name="${aon.framework.lib}"/>
+			</lib>
+			<lib dir="${aon.ui.framework.home}">	
+				<include name="${aon.ui.framework.lib}"/>
+			</lib>
+			<lib dir="${aon.security.bridge.home}">	
+				<include name="${aon.security.bridge.lib}"/>
+			</lib>
+
+			<!-- Internal libraries -->
+			<lib dir="${aon.geozone.home}/dist">	
+				<include name="${aon.geozone.lib}"/>
+			</lib>
+
+			<lib dir="${aon.registry.home}/dist">	
+				<include name="${aon.registry.lib}"/>
+			</lib>
+
+			<lib dir="${aon.company.home}/dist">	
+				<include name="${aon.company.lib}"/>
+			</lib>
+
+			<lib dir="${aon.config.home}/dist">	
+				<include name="${aon.config.lib}"/>
+			</lib>
+
+			<lib dir="${aon.calendar.home}/dist">	
+				<include name="${aon.calendar.lib}"/>
+			</lib>
+
+			<lib dir="${aon.planner.home}/dist">	
+				<include name="${aon.planner.lib}"/>
+			</lib>
+
+			<lib dir="${aon.ui.planner.home}/dist">	
+				<include name="${aon.ui.planner.lib}"/>
+			</lib>
+
+			<lib dir="${aon.ui.registry.home}/dist">	
+				<include name="${aon.ui.registry.lib}"/>
+			</lib>
+
+			<lib dir="${aon.ui.company.home}/dist">	
+				<include name="${aon.ui.company.lib}"/>
+			</lib>
+			
+			<lib dir="${aon.ui.config.home}/dist">	
+				<include name="${aon.ui.config.lib}"/>
+			</lib>
+
+			<lib dir="${aon.ui.report.home}/dist">	
+				<include name="${aon.ui.report.lib}"/>
+			</lib>			
+
+			<lib dir="${aon.employee.home}/dist">	
+				<include name="${aon.employee.lib}"/>
+			</lib>
+
+			<!-- External libraries -->
+			<lib dir="${ical4j.home}">
+				<include name="${ical4j.lib}"/>
+			</lib>
+
+			<lib dir="${antlr.home}">
+				<include name="${antlr.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.home}">	
+				<include name="${org.hibernate.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.home}/lib">
+				<include name="${org.objectweb.asm.lib}"/>
+				<include name="${org.objectweb.asm-attrs.lib}"/>
+				<include name="${javax.jta.lib}"/>
+				<include name="${org.dom4j.lib}"/>
+				<include name="${net.sf.cglib.lib}"/>
+				<include name="${net.sf.ehcache.lib}"/>
+			</lib>
+			
+			<lib dir="${org.hibernate.annotations.home}">	
+				<include name="${org.hibernate.annotations.lib}"/>
+			</lib>
+
+			<lib dir="${org.hibernate.annotations.home}/lib">	
+				<include name="${ejb3.persistence.lib}"/>
+				<include name="${org.hibernate.annotations.commons.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.myfaces.home}/lib">
+				<include name="${org.apache.myfaces.api.lib}" />
+				<include name="${org.apache.myfaces.impl.lib}" />
+			</lib>
+
+			<lib dir="${org.apache.tomahawk.home}/lib">
+				<include name="${org.apache.tomahawk.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.digester.home}">	
+				<include name="${org.apache.commons.digester.lib}"/>
+			</lib>
+			
+			<lib dir="${org.apache.commons.beanutils.home}">	
+				<include name="${org.apache.commons.beanutils.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.collections.home}">	
+				<include name="${org.apache.commons.collections.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.lang.home}">	
+				<include name="${org.apache.commons.lang.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.fileupload.home}">	
+				<include name="${org.apache.commons.fileupload.lib}"/>
+			</lib>
+
+			<lib dir="${org.apache.commons.codec.home}">	
+				<include name="${org.apache.commons.codec.lib}"/>
+			</lib>
+
+			<lib dir="${com.sun.facelets.home}">
+				<include name="${com.sun.facelets.lib}"/>
+			</lib>
+			
+			<lib dir="${com.sun.facelets.home}/lib">
+				<include name="${javax.el.lib}" />
+				<include name="${com.sun.el.lib}" />
+			</lib>
+
+			<lib dir="${net.sf.jasperreports.home}/dist">
+				<include name="${net.sf.jasperreports.lib}"/>
+			</lib>
+			
+			<lib dir="${net.sf.jasperreports.home}/lib">
+				<include name="${poi.lib}"/>
+				<include name="${com.lowagie.lib}"/>
+				<include name="${com.javaflow.lib}"/>
+			</lib>
+
+		</war>
+    </target>
+    <!-- ===================================================================== -->
+    <!-- JAVADOC		                                                       -->
+    <!-- ===================================================================== -->
+	<target name="javadoc">
+		<javadoc packagenames="*"
+		           sourcepath="src"
+		           defaultexcludes="yes"
+		           destdir="${dist.dir}/docs/api"
+		           author="false"
+		           version="false"
+		           use="true"
+		           windowtitle="${name}-${version} API"
+		           failonerror="false">
+            <classpath refid="classpath" />
+		    <doctitle><![CDATA[<h1>${name}-${version} API</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2006 Consulting & Development. All Rights Reserved.</i>]]></bottom>
+		    <tag name="todo" scope="all" description="To do:"/>
+		    <tag name="TODO" scope="all" description="To do:"/>
+		  </javadoc>	
+		
+		<zip destfile="${dist.dir}/docs/${name}-${version}-api.zip">
+			<fileset dir="${dist.dir}/docs/api" casesensitive="no" >
+				<include name="**/*.*" />
+			</fileset>
+		</zip> 
+		<!--
+	    <delete dir="${dist.dir}/docs" />
+		-->
+	</target>
+
+</project>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="/aon-employee" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-registry" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-geozone" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/FACELETS_1_1_11_LIBS" kind="con"/>
+	<classpathentry path="/aon-calendar" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-planner" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-ui-registry" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_DIGESTER_1_7_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LANG_2_2_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_FILEUPLOAD_1_0_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/MYFACES_IMPL_1_1_5_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB" kind="con"/>
+	<classpathentry path="/aon-ui-planner" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-ui-report" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_SECURITY_BRIDGE_1_2_3_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/JASPER_REPORTS_1_3_2_LIBS" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_4_LIBS" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LOGGING_1_1_LIB" kind="con"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/TOMAHAWK_1_1_5_LIB" kind="con"/>
+	<classpathentry path="/aon-company" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-ui-company" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-config" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-ui-config" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/ICAL4J_0_9_16_BUILD" kind="con"/>
+	<classpathentry path="bin" kind="output"/>
+</classpath>

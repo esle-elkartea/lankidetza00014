@@ -1,0 +1,122 @@
+#*
+ * Copyright 2003-2004 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * $Id: examples.vm,v 1.7 2004/02/20 13:13:36 marino Exp $
+ *#
+<HTML>
+<HEAD>
+  <TITLE>VelocityStruts 1.1</TITLE>
+  <link rel="stylesheet" href="doc/styles.css" type="text/css">
+</HEAD>
+
+<BODY>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+  <tr bgcolor="#000066">
+    <td>
+      <h2><font color="#FFFFFF"><img src="img/spacer.gif" width="520" height="1"><br>
+				Velocity for Struts 1.1</font></h2>
+      <font color="#FFFFFF">January 25. 2004</font></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<div><a href="index.vm"><font color="#000000">Home</font></a> <font color="#000000">&gt; Examples</font></div>
+
+
+<h5><b>Examples</b></h5>
+<ul>
+	<li><b>Struts App1: Address Editor</b><br>
+		This application is a very simple address editor. It consists of two dynamic
+		pages, one ActionForm, one Action class and an AddressBean. Address information
+		is gathered through a form and associated with a HTTP session. This information
+		can be displayed and modified. It demonstrates how the Struts control framework
+		can be used independently of a specific view technology. JSP and Velocity
+		templates can be mixed and matched within the same application. The support
+		for multiple languages demonstrates how Struts resources may be accessed from
+		within templates.
+		<ul>
+			<li><a href="$link.setForward("app1")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app1Jsp")" target="demo">JSP Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+	<li><b>Struts App2: Struts View Tools Demo</b><br>
+		This application demonstrates the Velocity view tools for Struts. These view
+		tool enable view designers to access the resources of the Struts framework. Their
+		functionality is a subset of the functionality provided by the Struts custom tag
+		libraries for JSP.
+		<ul>
+			<li><a href="$link.setForward("app2")" target="demo">Struts View Tools Demo</a>
+				(<a href="$link.setForward("app2Src")">template</a>)</li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+	<li><b><i></i> Struts App3: Struts Logon Example</b><br>
+		This is the well known Struts logon example application by Ted Husted. Here
+		it is implemented in both JSP and Velocity versions.
+		<ul>
+			<li><a href="$link.setForward("app3")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app3Jsp")" target="demo">JSP Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+        <li><b><i></i> Struts App4: Struts Tiles Example</b><br>
+		This application demonstrates the Velocity TilesTool for Struts.  It's functionality is a subset
+                of the functionality provided by the Struts Tiles tag library for JSP.
+		<ul>
+			<li><a href="$link.setForward("app4")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app4Jsp")" target="demo">JSP Version</a></li>
+                        <li><a href="$link.setForward("app4Mixed")" target="demo">Mixed Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+        <li><b><i></i> Struts App5: Struts Validator Example</b><br>
+		This application demonstrates the Velocity ValidatorTool for Struts.  It's functionality is a subset
+                of the functionality provided by the Struts HTML tag library for JSP.
+		<ul>
+			<li><a href="$link.setForward("app5")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app5Jsp")" target="demo">JSP Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+        <li><b><i></i> Struts App6: Struts SSL Ext. Example</b><br>
+		This application demonstrates the SecureLinkTool for Struts.  It's functionality is a subset
+    of the functionality provided by the SSL Ext. tag library for JSP. <br/>
+    SSL Ext. is a very useful extension to the Struts framework that enables you to declare actions
+    secure, non-secure or neutral in the struts-config.  For more information see the project's
+    <a href="http://sslext.sourceforge.net">homepage</a>.  This example app is a stripped down version
+    of the demo that comes with the SSL Ext. package.<br/>
+    In order to try out this example app you have to have SSL set up and enabled on your web server.
+    The test app defaults to ports 8080 for http and 8443 for https - if you use other ports for these
+    protocols you need to change the settings in the app's struts-config.
+		<ul>
+			<li><a href="$link.setForward("app6")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app6Jsp")" target="demo">JSP Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+        <li><b><i></i> Struts App7: Struts Tiles + SSL Ext. Example</b><br>
+		This application is the same as app 6 except for the struts-config and the added tiles-config.  It
+                shows how to use Tiles and SSL Ext. together in the same application.
+		<ul>
+			<li><a href="$link.setForward("app7")" target="demo">Velocity Version</a></li>
+			<li><a href="$link.setForward("app7Jsp")" target="demo">JSP Version</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</li>
+</ul>
+
+</BODY>
+</HTML>

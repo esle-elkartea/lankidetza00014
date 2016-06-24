@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-company"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-registry"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-calendar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-geozone"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-planner"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TOMAHAWK_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-planner"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-registry"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

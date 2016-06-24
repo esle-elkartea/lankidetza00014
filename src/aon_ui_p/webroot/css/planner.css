@@ -1,0 +1,46 @@
+/*Calendar component*/   
+.surgeryYearMonthHeader {background-color: #EEF0F3;color: #304478;text-align: center;border: none;font-weight: bold;}
+.surgeryWeekHeader {background-color: #EEF0F3;color: #304478;text-align: center;border: none;}
+.surgeryCurrentDayCell {background-color: #EEF0F3;color: #304478;border: none;}
+.calendar {border: 1px solid black;border-collapse: collapse;}
+.yearMonthHeader {background-color: #EEF0F3;color: #304478;border-width: 1px;border-style: solid;border-color: black;margin:2px;padding:0px;padding-left:4pt;padding-right:4pt;padding-bottom:2px;font-size: 4em;}
+.yearMonthHeader td{border: 1px solid black;}
+.weekHeader {font-size: 2em;border: 1px solid black;text-align:center;}
+.weekHeader td{border-bottom: 1px solid black}
+.dayCell {font-size: 2.5em;text-align:center;}
+.currentDayCell {background:#dee7ff;font-size: 2.5em;border: 1px solid black;text-align:center;}
+
+.tblLink{ background:transparent url(../images/form/edit.gif) left top no-repeat;padding-left: 10px; border:none;cursor:hand;}
+
+/*Planner component*/   
+.diaryDataPanel{background-color:#E7E6E6;width:100%;height:30px;border:solid #666666 1px;}
+.diaryDataPanel td label {font-size:80%;font-weight:bold;}
+.diaryDataPanel td span {white	-space:nowrap;text-decoration:underline;}
+.diaryDataPanel .columns {padding-bottom:0.3em;padding-left:0.5em;vertical-align:bottom;}
+.diaryDataPanel .last {padding-bottom:0.3em;vertical-align:bottom;width:100%;}
+.diaryBtPanel{background-color:#F3F1F1;width:100%;height:30px;border:solid #666666 1px;}
+.diaryBtPanel .buttons {padding-left:0.5em;padding-bottom:0.3em;vertical-align:bottom;}
+.diaryBtPanel .middle {padding-left:0.5em;padding-bottom:0.3em;vertical-align:bottom;width:100%;}
+.diaryBtPanel .last {padding-bottom:0.3em;padding-left:0.3em;vertical-align:bottom;background-color:#FFFFFF;border-left:solid #666666 1px;}
+.event-tab-content{height:250px;width:520px;padding:10px;}
+.event-radio{border:none;margin:0px;padding:0px;padding-right:0.5em;font-size:80%;color:#304478;white-space:nowrap;}
+.frequency{border-right:solid 1px #304478;}
+
+.diary{background:transparent url(../images/planner/diary.gif) left bottom no-repeat;padding:0 0 0 15px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.import{background:transparent url(../images/planner/import.gif) left bottom no-repeat;padding:0 0 0 15px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.event{background:transparent url(../images/planner/appointment.gif) left bottom no-repeat;padding:0 0 0 14px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.task{background:transparent url(../images/planner/task.gif) left bottom no-repeat;padding:0 0 0 14px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.reassign{background:transparent url(../images/planner/reassign.gif) left bottom no-repeat;padding:0 0 0 14px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.workingtime{background:transparent url(../images/planner/workingtime.gif) left bottom no-repeat;padding:0 0 0 14px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.reprogram{background:transparent url(../images/planner/reprogram.gif) left bottom no-repeat;padding:0 0 0 17px; border:none;cursor:hand;color:#304478;font-weight:bold;}
+.view-day{background:transparent url(../images/planner/view-day.gif) left center no-repeat;padding:0 0 0 12px; border:none;cursor:hand;color:#304478;white-space:nowrap;font-weight:bold;}
+.view-week{background:transparent url(../images/planner/view-week.gif) left center no-repeat;padding:0 0 0 6px; border:none;cursor:hand;color:#304478;white-space:nowrap;font-weight:bold;}
+.view-weekwork{background:transparent url(../images/planner/view-weekwork.gif) left center no-repeat; padding:0 0 0 2px; border:none;cursor:hand;color:#304478;white-space:nowrap;font-weight:bold;}
+.view-month{background:transparent url(../images/planner/view-month.gif) left center no-repeat;padding:0 0 0 11px; border:none;cursor:hand;color:#304478;white-space:nowrap;font-weight:bold;}
+
+.view-prev{background:transparent url(../images/scroll/arrow-previous.gif) left center no-repeat;padding:0.1em 0 0.4em 15px; margin-left:1px;font-weight: bold;cursor:hand;border:none;}
+.view-next{background:transparent url(../images/scroll/arrow-next.gif) left center no-repeat;padding:0.1em 0 0.4em 15px; margin-left:1px;font-weight: bold;cursor:hand;border:none;}
+
+/*Used simultaneously with aon-content-toolbar-item style.*/
+.aon-content-toolbar-item-worktime{}
+.aon-content-toolbar-item-freetime{}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="/aon-employee" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-planner" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-sales" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_4_LIBS" kind="con"/>
+	<classpathentry path="MYSQL_JDBC_VAR" kind="var"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_ANNOTATIONS_3_3_0_LIBS" kind="con"/>
+	<classpathentry path="/aon-registry" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/aon-customer" combineaccessrules="false" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB" kind="con"/>
+	<classpathentry path="/aon-company" combineaccessrules="false" kind="src"/>
+	<classpathentry path="bin" kind="output"/>
+</classpath>

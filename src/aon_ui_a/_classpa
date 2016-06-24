@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-registry"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-sales"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-registry"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-sales"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_3_LIBS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_ANNOTATIONS_3_3_0_LIBS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TOMAHAWK_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_IMPL_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_DIGESTER_1_7_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_COLLECTIONS_1_3_1_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_BEANUTILS_1_7_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FACELETS_1_1_11_LIBS"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-product"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-product"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-report"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-finance"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_FILEUPLOAD_1_0_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-calendar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-planner"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-employee"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-geozone"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-employee"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-finance"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_LANG_2_2_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-academy"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-account"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-account"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-account-bridge"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-purchase"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-purchase"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JASPER_REPORTS_1_3_2_LIB"/>
+	<classpathentry kind="var" path="COMMONS_JAVAFLOW_20060411_VAR"/>
+	<classpathentry kind="var" path="ITEXT_1_3_1_VAR"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-csb"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-customer"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-customer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_EL_1_0_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-company"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_SECURITY_BRIDGE_1_2_3_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-config"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ICAL4J_0_9_16_BUILD"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:h="http://java.sun.com/jsf/html">
+<body>
+
+<ui:composition template="/facelet/templates/aon.ui.form.xhtml">
+
+	<ui:define name="head">
+		<ui:include src="/facelet/shared/formHead.xhtml" />	
+		<t:stylesheet path="/css/planner.css" />
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="eventForm">
+		
+			<!--  toolbar navigation -->
+			<t:div id="aon-content-toolbar" forceId="#{true}" styleClass="aon-content-toolbar" >
+				<t:div styleClass="aon-content-toolbar-item-group">
+
+					<h:commandButton id="new" value="#{bundle.aon_reset}"
+								actionListener="#{planner.onNew}" action="new_freetime_event"
+								styleClass="aon-content-toolbar-item aon-content-toolbar-item-cancel"
+								onmouseover="this.className='aon-content-toolbar-item aon-content-toolbar-item-hover aon-content-toolbar-item-cancel'"
+								onmouseout="this.className='aon-content-toolbar-item aon-content-toolbar-item-cancel'" />
+
+					<h:commandButton id="cancel" value="#{bundle.aon_cancel}" immediate="#{true}"
+								actionListener="#{launcher.onCancel}" action="content"
+								styleClass="aon-content-toolbar-item aon-content-toolbar-item-cancel"
+								onmouseover="this.className='aon-content-toolbar-item aon-content-toolbar-item-hover aon-content-toolbar-item-cancel'"
+								onmouseout="this.className='aon-content-toolbar-item aon-content-toolbar-item-cancel'" />
+				</t:div>
+			</t:div>
+		
+			<t:div id="aon-scroll-area" forceId="#{true}">
+				<t:div styleClass="aon-scroll-area-internal">
+					<!-- start of bag panel -->
+					<!-- start of flow layout -->
+					<h:panelGrid columns="2" cellspacing="0" cellpadding="0" columnClasses="lbl,tab-input"> 
+				        <h:panelGrid columns="1">
+				            <t:inputCalendar
+				                id="plannerNavigator"
+				                monthYearRowClass="surgeryYearMonthHeader"
+				                weekRowClass="surgeryWeekHeader"
+				                currentDayCellClass="surgeryCurrentDayCell"
+				                value="#{planner.date}"
+				                valueChangeListener="#{planner.calendarValueChanged}"
+				                binding="#{planner.dateInput}" />
+				        </h:panelGrid>
+				
+				        <h:panelGrid columns="1" cellspacing="3" cellpadding="2" width="100%">
+							<f:facet name="header">
+								<t:div style="background-color:#EEF0F3;text-align:left;">
+									<h:outputText value="#{bundle.aon_planner_event_label}s" style="color:#304478;font-weight:bold;font-size:15px;"/>
+								</t:div>
+							</f:facet>
+							<t:dataTable id="plannerData" 
+								styleClass="grid" var="to" value="#{planner.events}" rows="20" 
+								rowOnMouseOver="selectRow( this )"
+								rowOnMouseOut="unselectRow( this )" 
+								rowOnClick="sendRow( this )"
+								columnClasses="strCell,centerStrCell,strCell" >
+						
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{bundle.aon_planner_event_category}" />
+									</f:facet>
+									<h:outputText value="#{to.category}" />
+								</h:column>
+				
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{bundle.aon_start_date}" />
+									</f:facet>
+									<h:outputText value="#{to.startTime}" />
+								</h:column>
+				
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{bundle.aon_planner_subject_label}" />
+									</f:facet>
+									<h:outputText value="#{to.title}" />
+								</h:column>
+				
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="#{bundle.aon_id}" />
+									</f:facet>
+									<t:commandLink styleClass="tblLink" action="#{planner.onSelect}"/>
+									<h:outputText value="#{to.id}" />
+								</h:column>
+				
+							</t:dataTable>
+							<h:panelGrid columns="2" styleClass="scroll" columnClasses="scrollCell,scrollCell">
+								<t:div styleClass="scrollLegend">
+									<t:dataScroller id="scroll_1" for="plannerData" rowsCountVar="rowsCount" 
+										firstRowIndexVar="firstRowIndex" lastRowIndexVar="lastRowIndex"
+										rendered="#{planner.events.rowCount>0}">
+										<h:outputFormat value="#{bundle.aon_scroll}" styleClass="" >
+											<f:param value="#{firstRowIndex}" />
+											<f:param value="#{lastRowIndex}" />
+											<f:param value="#{rowsCount}" />
+										</h:outputFormat>
+									</t:dataScroller>
+								</t:div>
+							
+								<t:div id="navigation" styleClass="scrollLinks">
+									<t:dataScroller id="scroll_0" for="plannerData" fastStep="5" paginatorMaxPages="5"
+										paginatorActiveColumnClass="scrollPagAct" paginatorColumnClass="scrollPagInAct"
+										paginator="true" rendered="#{planner.events.rowCount>20}">
+										<f:facet name="first">
+											<h:graphicImage url="/images/scroll/arrow-first.gif"/>
+										</f:facet>
+										<f:facet name="last">
+											<h:graphicImage url="/images/scroll/arrow-last.gif"/>
+										</f:facet>
+										<f:facet name="previous">
+											<h:graphicImage url="/images/scroll/arrow-previous.gif" />
+										</f:facet>
+										<f:facet name="next">
+											<h:graphicImage url="/images/scroll/arrow-next.gif" />
+										</f:facet>
+										<f:facet name="fastforward">
+											<h:graphicImage url="/images/scroll/arrow-ff.gif" />
+										</f:facet>
+										<f:facet name="fastrewind">
+											<h:graphicImage url="/images/scroll/arrow-fr.gif" />
+										</f:facet>
+									</t:dataScroller>
+								</t:div>
+							</h:panelGrid>
+				        </h:panelGrid>
+					</h:panelGrid>
+				</t:div>
+			</t:div>
+
+		</h:form>
+ 	</ui:define>
+
+</ui:composition>
+
+</body>
+</html>
+ 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-registry"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-geozone"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_BEANUTILS_1_7_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SERVLET_API_2_4_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_DIGESTER_1_7_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_FILEUPLOAD_1_0_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ANTLR_2_7_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMONS_CODEC_1_3_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ICEFACES_1_6_0_LIBS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/TOMAHAWK_1_1_5_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-config"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

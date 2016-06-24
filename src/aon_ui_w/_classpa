@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-warehouse"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-product"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-purchase"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-sales"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-registry"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-commercial"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-tas-delivery"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-product"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-report"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-finance"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_API_1_1_5_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYFACES_IMPL_1_1_5_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-customer"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_FRAMEWORK_1_9_12_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AON_UI_FRAMEWORK_1_9_14_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-tas-commercial"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBERNATE_3_2_4_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-company"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-ui-company"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/aon-config"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

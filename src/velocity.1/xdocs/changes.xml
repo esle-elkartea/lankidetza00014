@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2003-2004 The Apache Software Foundation.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  $Id: changes.xml,v 1.18.2.1 2004/05/17 17:06:23 nbubna Exp $
+-->
+<document>
+  <properties>
+    <title>Velocity Tools Changes</title>
+    <author email="nathan@esha.com">Nathan Bubna</author>
+    <projectfile>xdocs/menu.xml</projectfile>
+  </properties>
+<body>
+  <section name="Velocity Tools Changes">
+    <p>This document tracks the changes in Velocity Tools between releases.</p>
+
+    <subsection name="1.1">
+      <p>This section describes changes after the 1.1-rc1 release.</p>
+      <ul>
+      <li>Deprecated StrutsUtils' getActionErrors() and getActionMessages() in favor of getErrors() and getMessages(). (ndb)</li>
+      <li>Fixed javadoc warnings during build (patch contributed by Nathan Green). (ndb)</li>
+      <li>Some minor improvements to Struts example apps. (maj)</li>
+      </ul>
+    </subsection>
+
+    <subsection name="1.1-rc1">
+      <p>This section describes changes after the 1.1-beta release.</p>
+      <ul>
+      <li>Changed recommended keys for MessageTool and ActionMessagesTool to $text and $messages. (ndb)</li>
+      <li>Changed XMLToolboxManager to use thread context classloader when digesting toolbox. (ndb)</li>
+      <li>Fixed session tool initialization/synchronization issue. (ndb)</li>
+      <li>Added TilesTool methods to import attributes to specific scopes (page/request/session/application). (maj)</li>
+      <li>Added new demos for using ValidatorTool, TilesTool, and SecureLinkTool to VelocityStruts example app. (maj)</li>
+      <li>Upgraded/refactored MathTool to add floor() and ceil(), make type-handling more intuitive and flexible, and improve number parsing. (ndb)</li>
+      <li>Improved resource bundle support in ActionMessagesTool. (ndb)</li>
+      <li>ErrorsTool now extends ActionMessagesTool. (ndb)</li>
+      <li>LinkTool now encodes URLs using the response's character encoding. (ndb)</li>
+      <li>Removed inadvertant JDK 1.4 dependencies from ImportSupport. (ndb)</li>
+      <li>Made XMLToolboxManager not abstract (#24840). (ndb)</li>
+      <li>De-staticized non-private methods in RenderTool and LinkTool. (ndb)</li>
+      <li>Added NumberTool for formatting numbers (contributed by Mike Kienenberger). (ndb)</li>
+      <li>Filled out and cleaned up DateTool's toDate(...) methods. (ndb)</li>
+      <li>Changed VelocityViewServlet's error method to print the stack trace of the root cause when it encounters a MethodInvocationException. (ndb)</li>
+      <li>Added importAttributes() method to TilesTool to automatically put all attributes of the current Tiles context into the Velocity context. (maj)</li>
+      <li>Replaced TilesTool's getString(String) method with getAttribute(String) in order to support "put lists." (maj)</li>
+      </ul>
+    </subsection>
+
+    <subsection name="1.1-beta1">
+      <p>This section describes changes after the 1.0 release.</p>
+      <ul>
+      <li>Made VelocityViewServlet use response.getOutputStream() if response.getWriter() fails.  This is functionality is deprecated and provided as a migration path from 1.0 behavior. (dlr, ndb)</li>
+      <li>De-staticized MathTool to make it extendable. (ndb)</li>
+      <li>Factored common functionality of ErrorsTool, MessageTool, and ActionMessagesTool into abstract MessageResourcesTool. (ndb)</li>
+      <li>Added ImportTool as a simple ImportSupport-based tool. (maj)</li>
+      <li>Converted TilesTool to extend ImportSupport. This allows easy mixing of view technologies (JSP, Velocity, etc.) in VelocityStruts applications. (thanks go to Matthew Payne for the idea!) (maj)</li>
+      <li>Added ImportSupport class for building tools that can import resources from local or remote URLS. (maj)</li>
+      <li>Overhauled DateTool to make it more extendable, user-friendly, and add support for standard, localized date-time styles (see DateTool javadoc for more). (ndb)</li>
+      <li>Added support for specifying message resource bundles to StrutsUtils, ErrorsTool, ActionMessagesTool, and MessageTool. (maj,ndb)</li>
+      <li>Added commons-validator (1.0.2) and sslext jars to library. (maj)</li>
+      <li>Added SecureLinkTool for using Struts SSL Extension with VelocityStruts. (maj)</li>
+      <li>Added ValidatorTool to provide Struts 1.1 javascript validation for VelocityStruts. (maj)</li>
+      <li>output.encoding property (if non-default) is appended to default content-type as the charset. (ndb)</li>
+      <li>VelocityViewServlet now uses response.getWriter() instead of response.getOutputStream() as suggested by Matthew Payne. (ndb)</li>
+      <li>Improved VelocityViewServlet error handling (exceptions are logged and error() is now more robust). (ndb)</li>
+      <li>Put VelocityViewServlet's requestCleanup() call in a 'finally' clause to allow clean after errors during a request. (dlr)</li>
+      <li>Fixed miscellaneous javadoc and doc typos (many of which were reported by Takayoshi Kimura) (ndb)</li>
+      <li>Allow system to reclaim objects held by pooled writers in VelocityViewServlet (see bug 18951) (ndb)</li>
+      <li>Changed LinkTool to automatically check for XHTML setting (ndb)</li>
+      <li>Added support for standard XHTML mode setting via toolbox config (ndb)</li>
+      <li>Moved request/response/session/application keys to ViewContext and add getAttribute() method (ndb)</li>
+      <li>Added selectModule() and getForwardURL() to StrutsUtils (maj)</li>
+      <li>Convert VelocityStruts tools to use new StrutsUtils methods and be module aware (maj)</li>
+      <li>Removed unused imports from StrutsLinkTool (ndb)</li>
+      <li>Refactor StrutsUtils to use Struts 1.1 classes and support modules (maj)</li>
+      <li>Added TilesTool (maj)</li>
+      <li>Allow subclasses of VelocityViewServlet to use different ToolboxManager implementations (ndb)</li>
+      <li>Added CookieTool (contributed by Dmitri Colebatch) (ndb)</li>
+      <li>Added demo of &lt;data&gt; elements to simple VelocityView example (ndb)</li>
+      <li>Made simple VelocityStruts example catch Commons-Logging output with LogSystemCommonsLog (ndb)</li>
+      <li>Convert toolbox setup to use Digester instead of dom4j (ndb)</li>
+      <li>Added LogSystemCommonsLog and CommonsLogLogSystem to provide bridges between Commons-Logging and Velocity's LogSystem (ndb)</li>
+      <li>Added Commons Logging 1.0.3 jar (ndb)</li>
+      <li>Added ActionMessagesTool (ndb)</li>
+      <li>Upgrade deprecated Struts 1.0 uses in examples (ndb)</li>
+      <li>Updated jars to Struts 1.1, BeanUtils 1.6.1, Digester 1.5, Collections 2.1 (ndb)</li>
+      </ul>
+    </subsection>
+
+    <subsection name="1.0">
+      <ul>
+      <li>Initial release.</li>
+      </ul>
+    </subsection>
+
+  </section>
+
+</body>
+</document>
